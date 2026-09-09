@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulsar Desenvolvimento de Software | Especialistas em ERP Protheus</title>
+<meta name="description" content="Softhouse em Caxias do Sul especializada em ERP Protheus, aplicações web, apps mobile e integrações. Customização, sustentação e desenvolvimento sob medida para a sua operação.">
+<meta name="keywords" content="ERP Protheus, ADVPL, TLPP, customização Protheus, desenvolvimento de software, softhouse Caxias do Sul, aplicativo mobile, integração de sistemas">
+<meta name="author" content="Pulsar Desenvolvimento de Software">
+<meta name="robots" content="index, follow">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#00161b">
+<link rel="canonical" href="https://pulsar.dev.br/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Pulsar Desenvolvimento de Software">
+<meta property="og:title" content="Pulsar Desenvolvimento de Software | Especialistas em ERP Protheus">
+<meta property="og:description" content="Sistemas que acompanham o ritmo da sua operação. Protheus, web, mobile e integrações.">
+<meta property="og:url" content="https://pulsar.dev.br/">
+<meta property="og:image" content="https://pulsar.dev.br/assets/og-pulsar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pulsar Desenvolvimento de Software">
+<meta name="twitter:description" content="Sistemas que acompanham o ritmo da sua operação.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,75..125,300..900;1,75..125,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2300161b'/%3E%3Ccircle cx='50' cy='50' r='26' fill='none' stroke='%2322c3dc' stroke-width='8'/%3E%3Ccircle cx='50' cy='50' r='11' fill='%2322c3dc'/%3E%3C/svg%3E">
+
+<style>
+/* ============ tokens ============ */
+:root{
+  --bg:#00161b;
+  --bg-2:#00242a;
+  --bg-3:#002f37;
+  --teal:#00778b;
+  --beam:#22c3dc;
+  --glow:rgba(34,195,220,.16);
+  --white:#ffffff;
+  --txt:#e6f3f5;
+  --mute:rgba(214,238,242,.66);
+  --faint:rgba(214,238,242,.42);
+  --line:rgba(140,205,216,.16);
+  --line-2:rgba(140,205,216,.28);
+  --card:rgba(255,255,255,.035);
+  --grad:linear-gradient(100deg,#22c3dc 0%,#4fe3e0 45%,#00778b 100%);
+  --font:'Archivo',system-ui,-apple-system,sans-serif;
+  --shell:min(1220px,90vw);
+  --r:18px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;background:var(--bg);color:var(--txt);font-family:var(--font);
+  font-variation-settings:'wdth' 100;font-size:clamp(1rem,.96rem + .2vw,1.06rem);
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img,svg,canvas,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--beam);color:var(--bg)}
+:focus-visible{outline:2px solid var(--beam);outline-offset:3px;border-radius:6px}
+
+h1,h2,h3,h4{margin:0;font-variation-settings:'wdth' 122,'wght' 800;line-height:1.05;letter-spacing:-.018em;text-wrap:balance}
+h1{font-size:clamp(2.35rem,1.1rem + 4.9vw,4.6rem)}
+h2{font-size:clamp(1.95rem,1.2rem + 2.9vw,3.35rem)}
+h3{font-size:clamp(1.2rem,1.06rem + .6vw,1.5rem);font-variation-settings:'wdth' 116,'wght' 750}
+h4{font-size:1rem;font-variation-settings:'wdth' 112,'wght' 700}
+p{margin:0;max-width:64ch}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.shell{width:var(--shell);margin-inline:auto}
+section{position:relative;padding:clamp(4.5rem,9vw,8.5rem) 0}
+.sec-head{max-width:62ch;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.sec-num{
+  font-variation-settings:'wdth' 125,'wght' 800;font-size:clamp(3.4rem,8vw,6.5rem);
+  line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--line-2);
+  display:block;margin-bottom:1.2rem;letter-spacing:-.04em;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;
+  font-variation-settings:'wdth' 100,'wght' 650;color:var(--beam);margin-bottom:1.1rem;
+  padding:.4rem .95rem .4rem .7rem;border:1px solid var(--line-2);border-radius:100px;background:rgba(34,195,220,.06);
+}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--beam);flex:none;box-shadow:0 0 0 4px rgba(34,195,220,.18)}
+.lede{color:var(--mute);margin-top:1.3rem;font-size:1.06rem}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  padding:1rem 1.75rem;border-radius:100px;cursor:pointer;border:1.5px solid transparent;
+  font-family:var(--font);font-size:1rem;font-variation-settings:'wdth' 105,'wght' 700;
+  transition:transform .25s var(--ease),box-shadow .25s,background .25s,color .25s,border-color .25s;
+}
+.btn-solid{background:var(--grad);color:#00181d;box-shadow:0 8px 30px -8px rgba(34,195,220,.5)}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 14px 40px -8px rgba(34,195,220,.65)}
+.btn-line{border-color:var(--line-2);color:var(--txt)}
+.btn-line:hover{border-color:var(--beam);color:var(--beam);transform:translateY(-2px)}
+.btn-wa{background:#25d366;color:#04331a}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 12px 34px -10px rgba(37,211,102,.6)}
+.btn-sm{padding:.65rem 1.25rem;font-size:.92rem}
+
+.skip{position:absolute;left:-9999px;background:var(--beam);color:var(--bg);padding:.8rem 1.2rem;z-index:200}
+.skip:focus{left:1rem;top:1rem}
+
+/* ============ header ============ */
+.head{position:fixed;inset:0 0 auto;z-index:100;transition:background .35s,border-color .35s,backdrop-filter .35s;border-bottom:1px solid transparent}
+.head.stuck{background:rgba(0,22,27,.86);backdrop-filter:blur(16px);border-bottom-color:var(--line)}
+.head-in{display:flex;align-items:center;gap:1.4rem;height:84px}
+.logo{display:flex;align-items:center;gap:.65rem;margin-right:auto}
+.logo-name{font-variation-settings:'wdth' 125,'wght' 800;font-size:1.3rem;letter-spacing:.03em;line-height:1;display:block}
+.logo-sub{display:block;font-size:.53rem;letter-spacing:.26em;color:var(--beam);font-variation-settings:'wdth' 100,'wght' 600;margin-top:4px}
+.nav{display:flex;align-items:center;gap:.4rem}
+.nav > li{position:relative;list-style:none}
+.nav a,.nav .drop-btn{
+  display:flex;align-items:center;gap:.35rem;padding:.6rem .85rem;border-radius:10px;
+  color:var(--mute);font-size:.95rem;font-variation-settings:'wght' 500;
+  background:none;border:0;font-family:var(--font);cursor:pointer;transition:color .25s,background .25s;
+}
+.nav a:hover,.nav .drop-btn:hover,.nav a.active{color:var(--white);background:rgba(255,255,255,.05)}
+.drop-btn svg{transition:transform .3s var(--ease)}
+.drop[data-open=true] .drop-btn svg{transform:rotate(180deg)}
+.drop-menu{
+  position:absolute;top:calc(100% + .5rem);left:0;min-width:230px;list-style:none;margin:0;padding:.5rem;
+  background:#02252b;border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px -20px rgba(0,0,0,.7);
+  opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s,transform .25s var(--ease),visibility .25s;
+}
+.drop[data-open=true] .drop-menu{opacity:1;visibility:visible;transform:none}
+.drop-menu a{padding:.65rem .8rem;border-radius:9px}
+.head-actions{display:flex;align-items:center;gap:.7rem}
+.burger{display:none;background:none;border:1px solid var(--line-2);border-radius:12px;padding:.7rem;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:var(--txt);margin:4px 0;transition:transform .3s var(--ease),opacity .2s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* ============ hero ============ */
+.hero{min-height:100svh;display:flex;align-items:center;padding:8rem 0 4rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-bg::before{
+  content:'';position:absolute;width:900px;height:900px;left:-15%;top:-30%;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,119,139,.42),transparent 62%);filter:blur(30px);
+}
+.hero-bg::after{
+  content:'';position:absolute;width:760px;height:760px;right:-12%;bottom:-28%;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,195,220,.2),transparent 65%);filter:blur(40px);
+}
+.grid-lines{position:absolute;inset:0;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:90px 90px;
+  mask-image:radial-gradient(ellipse 75% 65% at 50% 45%,#000,transparent 78%);
+}
+#trace{position:absolute;left:0;right:0;bottom:0;height:46%;width:100%;opacity:.9}
+.hero-in{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero h1{max-width:16ch}
+.hero .lede{max-width:60ch;font-size:clamp(1.05rem,1rem + .4vw,1.24rem)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-top:2.6rem}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:clamp(3rem,6vw,4.5rem);width:100%;max-width:900px;
+}
+.stat{background:rgba(0,22,27,.6);padding:1.7rem 1.2rem;backdrop-filter:blur(6px)}
+.stat b{display:block;font-variation-settings:'wdth' 122,'wght' 800;font-size:clamp(1.9rem,1.2rem + 2.2vw,2.9rem);line-height:1;margin-bottom:.45rem}
+.stat span{font-size:.9rem;color:var(--faint)}
+.scroll-cue{position:absolute;left:50%;bottom:1.6rem;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.6rem;font-size:.72rem;letter-spacing:.22em;color:var(--faint)}
+.scroll-cue i{display:block;width:1px;height:44px;background:linear-gradient(var(--beam),transparent);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============ marquee ============ */
+.clients{padding:clamp(2.2rem,4vw,3.2rem) 0;background:#eef4f5;color:#0a2126}
+.clients .kicker{text-align:center;font-size:.79rem;letter-spacing:.18em;color:#5d7f86;margin:0 auto 1.7rem}
+.marquee{display:flex;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.mq-track{display:flex;align-items:center;gap:clamp(2.4rem,5.5vw,4.5rem);padding-right:clamp(2.4rem,5.5vw,4.5rem);flex:none;animation:slide 42s linear infinite}
+.marquee:hover .mq-track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-100%)}}
+.cli{height:clamp(30px,4vw,44px);width:auto;flex:none;filter:grayscale(1);opacity:.6;transition:filter .35s,opacity .35s}
+.cli:hover{filter:none;opacity:1}
+
+/* ============ sobre ============ */
+.about-in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.about-in p + p{margin-top:1.1rem}
+.badges{display:flex;flex-direction:column;gap:.75rem;margin-top:2.2rem}
+.badge{display:flex;align-items:center;gap:.8rem;padding:.9rem 1.15rem;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:.95rem}
+.badge svg{color:var(--beam);flex:none}
+.about-media{position:relative}
+.about-media .frame{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#02252b;aspect-ratio:4/5;position:relative}
+.about-media .frame::after{content:'';position:absolute;inset:0;background:linear-gradient(190deg,transparent 55%,rgba(0,22,27,.72));pointer-events:none}
+.about-media .frame img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.ph{color:var(--faint);font-size:.9rem;max-width:26ch}
+.ph b{display:block;color:var(--beam);font-variation-settings:'wght' 700;margin-bottom:.4rem}
+.about-tag{
+  position:absolute;right:-10px;bottom:-22px;background:#02252b;border:1px solid var(--line-2);
+  border-radius:14px;padding:1rem 1.3rem;box-shadow:0 24px 50px -20px rgba(0,0,0,.8);
+}
+.about-tag b{display:block;font-variation-settings:'wdth' 120,'wght' 800;font-size:1.7rem;line-height:1;color:var(--beam)}
+.about-tag span{font-size:.82rem;color:var(--faint)}
+
+/* ============ serviços ============ */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.svc{
+  position:relative;padding:2rem 1.8rem;border:1px solid var(--line);border-radius:var(--r);
+  background:var(--card);overflow:hidden;transition:transform .35s var(--ease),border-color .35s,background .35s;
+  display:flex;flex-direction:column;
+}
+.svc::before{content:'';position:absolute;inset:0;background:radial-gradient(80% 60% at 50% 0%,var(--glow),transparent 70%);opacity:0;transition:opacity .4s}
+.svc:hover{transform:translateY(-6px);border-color:var(--line-2);background:rgba(255,255,255,.055)}
+.svc:hover::before{opacity:1}
+.svc > *{position:relative}
+.svc-ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(34,195,220,.1);border:1px solid var(--line-2);color:var(--beam);margin-bottom:1.4rem}
+.svc h3{margin-bottom:.7rem}
+.svc p{color:var(--mute);font-size:.97rem}
+.svc ul{list-style:none;margin:1.4rem 0 1.6rem;padding:0;display:grid;gap:.55rem}
+.svc li{display:flex;gap:.6rem;align-items:center;font-size:.93rem;color:var(--mute)}
+.svc li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal);flex:none}
+.svc .more{margin-top:auto;color:var(--beam);font-size:.93rem;font-variation-settings:'wght' 650;display:inline-flex;align-items:center;gap:.45rem;transition:gap .25s}
+.svc:hover .more{gap:.8rem}
+
+/* ============ metodologia ============ */
+.method{background:linear-gradient(180deg,var(--bg),#00212700 100%),var(--bg-2)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:1rem}
+.step{padding:1.9rem 1.6rem;border:1px solid var(--line);border-radius:var(--r);background:rgba(0,22,27,.5);position:relative;transition:border-color .35s,transform .35s var(--ease)}
+.step:hover{border-color:var(--line-2);transform:translateY(-5px)}
+.step b{font-variation-settings:'wdth' 125,'wght' 800;font-size:.95rem;color:var(--beam);display:block;margin-bottom:1rem}
+.step h3{font-size:1.18rem;margin-bottom:.6rem}
+.step p{font-size:.93rem;color:var(--mute)}
+
+/* ============ cases ============ */
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(2rem,5vw,4.5rem);align-items:center;padding:clamp(2rem,4vw,3.5rem) 0}
+.case + .case{border-top:1px solid var(--line)}
+.case.flip .case-txt{order:2}
+.case-txt h3{font-size:clamp(1.5rem,1.1rem + 1.4vw,2.1rem);margin-bottom:1rem}
+.case-txt p{color:var(--mute)}
+.case-txt p + p{margin-top:.9rem}
+.case-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0}
+.tag{font-size:.82rem;padding:.35rem .85rem;border:1px solid var(--line);border-radius:100px;color:var(--mute);background:var(--card)}
+.case-shot{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:linear-gradient(155deg,rgba(0,119,139,.3),rgba(0,22,27,.95));aspect-ratio:16/10;display:grid;place-items:center;padding:2rem;text-align:center}
+.case-shot img{width:100%;height:100%;object-fit:cover}
+
+/* ============ time ============ */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.person{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card);transition:transform .35s var(--ease),border-color .35s}
+.person:hover{transform:translateY(-6px);border-color:var(--line-2)}
+.person .photo{aspect-ratio:4/5;background:#02252b;position:relative;overflow:hidden}
+.person .photo::after{content:'';position:absolute;inset:0;background:linear-gradient(200deg,transparent 58%,rgba(0,22,27,.6));pointer-events:none}
+.person .photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.person:hover .photo img{transform:scale(1.04)}
+.person-body{padding:1.5rem}
+.person-role{color:var(--beam);font-size:.86rem;font-variation-settings:'wght' 600;margin:.35rem 0 .9rem}
+.person p{font-size:.93rem;color:var(--mute)}
+.person .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.1rem}
+.person a.mail{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.2rem;font-size:.88rem;color:var(--mute);transition:color .25s;word-break:break-all}
+.person a.mail:hover{color:var(--beam)}
+
+/* ============ depoimento ============ */
+.quote{background:var(--bg-2);border-block:1px solid var(--line)}
+.quote-in{max-width:900px;margin-inline:auto;text-align:center}
+.quote blockquote{margin:0;font-size:clamp(1.2rem,1rem + 1.1vw,1.85rem);font-variation-settings:'wdth' 112,'wght' 500;line-height:1.42;color:var(--white)}
+.quote .mark{font-variation-settings:'wdth' 125,'wght' 800;font-size:4rem;color:var(--teal);line-height:.6;display:block;margin-bottom:1rem}
+.quote figcaption{margin-top:1.8rem;color:var(--faint);font-size:.95rem}
+.quote figcaption b{display:block;color:var(--txt);font-variation-settings:'wght' 700}
+
+/* ============ faq ============ */
+.faq-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,4rem);align-items:start}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:1.4rem 3rem 1.4rem 0;position:relative;font-variation-settings:'wdth' 112,'wght' 650;font-size:1.03rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'';position:absolute;right:.6rem;top:1.65rem;width:11px;height:11px;border-right:2px solid var(--beam);border-bottom:2px solid var(--beam);transform:rotate(45deg);transition:transform .3s var(--ease)}
+details[open] summary::after{transform:rotate(-135deg)}
+.ans{padding:0 3rem 1.5rem 0;color:var(--mute);font-size:.97rem}
+
+/* ============ contato ============ */
+.contact{background:var(--bg-2);position:relative;overflow:hidden}
+.contact::before{content:'';position:absolute;width:700px;height:700px;right:-14%;top:-24%;border-radius:50%;background:radial-gradient(circle,rgba(0,119,139,.35),transparent 65%);filter:blur(30px)}
+.contact-in{position:relative;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2.5rem,5vw,4.5rem);align-items:start}
+.perks{list-style:none;margin:2.2rem 0 0;padding:0;display:grid;gap:1rem}
+.perks li{display:flex;gap:.8rem;align-items:flex-start;color:var(--mute);font-size:.97rem}
+.perks svg{color:var(--beam);flex:none;margin-top:3px}
+.contact-wa{margin-top:2.2rem;padding-top:1.8rem;border-top:1px solid var(--line);font-size:.95rem;color:var(--faint)}
+.contact-wa a{color:var(--beam);font-variation-settings:'wght' 650}
+
+.form{background:rgba(0,22,27,.72);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.6rem,3vw,2.4rem);backdrop-filter:blur(10px)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{display:flex;flex-direction:column;gap:.45rem}
+.field.full{grid-column:1/-1}
+.field label{font-size:.86rem;color:var(--mute);font-variation-settings:'wght' 600}
+.field label i{color:var(--beam);font-style:normal}
+.field input,.field select,.field textarea{
+  font-family:var(--font);font-size:.97rem;color:var(--txt);background:rgba(255,255,255,.04);
+  border:1px solid var(--line);border-radius:11px;padding:.85rem 1rem;transition:border-color .25s,background .25s;width:100%;
+}
+.field textarea{resize:vertical;min-height:110px}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2322c3dc' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.6rem}
+.field option{background:#02252b;color:var(--txt)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--beam);background:rgba(34,195,220,.05)}
+.field input::placeholder,.field textarea::placeholder{color:rgba(214,238,242,.3)}
+.field.err input,.field.err select,.field.err textarea{border-color:#ff8a7a}
+.msg-err{font-size:.8rem;color:#ff8a7a;display:none}
+.field.err .msg-err{display:block}
+.form .btn{width:100%;margin-top:1.4rem}
+.form-note{font-size:.8rem;color:var(--faint);text-align:center;margin-top:.9rem}
+.form-ok{display:none;text-align:center;padding:2.5rem 1rem}
+.form-ok.on{display:block}
+.form.sent .fgrid,.form.sent .btn,.form.sent .form-note{display:none}
+.form-ok .ok-ico{width:64px;height:64px;border-radius:50%;background:rgba(34,195,220,.12);border:1px solid var(--line-2);display:grid;place-items:center;margin:0 auto 1.3rem;color:var(--beam)}
+.form-ok h3{margin-bottom:.7rem}
+.form-ok p{color:var(--mute);margin-inline:auto}
+
+/* ============ footer ============ */
+.foot{padding:clamp(3.5rem,6vw,5rem) 0 2rem;border-top:1px solid var(--line);background:#000f13;font-size:.94rem;color:var(--mute)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.4fr;gap:clamp(1.8rem,4vw,3rem)}
+.foot h4{color:var(--white);margin-bottom:1.2rem}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.foot a{transition:color .25s}
+.foot a:hover{color:var(--beam)}
+.foot-brand p{margin-top:1.1rem;max-width:32ch;color:var(--faint)}
+.socials{display:flex;gap:.6rem;margin-top:1.5rem}
+.socials a{width:38px;height:38px;border-radius:11px;border:1px solid var(--line);display:grid;place-items:center;transition:border-color .25s,color .25s,transform .25s}
+.socials a:hover{border-color:var(--beam);color:var(--beam);transform:translateY(-2px)}
+.foot-end{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.85rem;color:var(--faint)}
+
+.wa-float{position:fixed;right:1.1rem;bottom:1.1rem;z-index:90;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.45);transition:transform .25s var(--ease)}
+.wa-float:hover{transform:scale(1.08)}
+
+/* ============ reveal ============ */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ============ responsivo ============ */
+@media (max-width:1024px){
+  .svc-grid,.team{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  .about-in,.case,.faq-in,.contact-in{grid-template-columns:1fr}
+  .case.flip .case-txt{order:0}
+  .about-media{order:-1}
+  .about-tag{right:12px;bottom:-18px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  html{scroll-padding-top:74px}
+  .head-in{height:74px}
+  .nav{
+    position:fixed;inset:74px 0 auto;flex-direction:column;align-items:stretch;gap:0;
+    background:#00161b;border-bottom:1px solid var(--line);padding:.5rem 5vw 1.5rem;margin:0;
+    max-height:calc(100svh - 74px);overflow-y:auto;
+    transform:translateY(-125%);transition:transform .38s var(--ease);
+  }
+  .nav.open{transform:none}
+  .nav a,.nav .drop-btn{padding:.95rem .4rem;font-size:1.05rem;border-radius:0;width:100%;justify-content:flex-start;border-bottom:1px solid var(--line)}
+  .drop-menu{position:static;opacity:1;visibility:visible;transform:none;background:none;border:0;box-shadow:none;padding:0 0 0 1rem;display:none}
+  .drop[data-open=true] .drop-menu{display:block}
+  .drop-menu a{font-size:.98rem;color:var(--faint)}
+  .burger{display:block}
+  .head-actions .btn{display:none}
+  .hero{min-height:auto;padding:7rem 0 4.5rem}
+  .hero-stats{grid-template-columns:1fr}
+  .scroll-cue{display:none}
+  .svc-grid,.team,.steps{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .foot-grid{grid-template-columns:1fr}
+  h1,h2,h3{font-variation-settings:'wdth' 112,'wght' 800}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  #trace{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="head" id="head">
+  <div class="shell head-in">
+    <a class="logo" href="#home" aria-label="Pulsar, início">
+      <svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="27" fill="none" stroke="#22c3dc" stroke-width="9"/>
+        <circle cx="50" cy="50" r="12" fill="#22c3dc"/>
+        <path d="M2 38h22M78 62h20" stroke="#22c3dc" stroke-width="9" stroke-linecap="round"/>
+      </svg>
+      <span>
+        <span class="logo-name">PULSAR</span>
+        <span class="logo-sub">DESENVOLVIMENTO DE SOFTWARE</span>
+      </span>
+    </a>
+
+    <ul class="nav" id="nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li class="drop" data-open="false">
+        <button class="drop-btn" aria-expanded="false" aria-controls="dropmenu">
+          Serviços
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="drop-menu" id="dropmenu">
+          <li><a href="#servicos">ERP Protheus</a></li>
+          <li><a href="#servicos">Aplicações web</a></li>
+          <li><a href="#servicos">Apps mobile</a></li>
+          <li><a href="#servicos">Integrações</a></li>
+          <li><a href="#servicos">Sustentação e suporte</a></li>
+        </ul>
+      </li>
+      <li><a href="#metodo">Metodologia</a></li>
+      <li><a href="#cases">Projetos</a></li>
+      <li><a href="#time">Time</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+
+    <div class="head-actions">
+      <a class="btn btn-solid btn-sm" href="#contato">Fale conosco</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="grid-lines"></div>
+  </div>
+  <canvas id="trace" aria-hidden="true"></canvas>
+
+  <div class="shell hero-in">
+    <span class="eyebrow rv"><i></i>Protheus · Web · Mobile · Integrações</span>
+    <h1 class="rv">Sistemas que acompanham o <span class="grad">ritmo da sua operação</span>.</h1>
+    <p class="lede rv">A Pulsar desenvolve, customiza e sustenta o software que sua empresa usa todos os dias. Do ERP Protheus ao aplicativo na mão da equipe de campo.</p>
+    <div class="hero-actions rv">
+      <a class="btn btn-solid" href="#servicos">Conheça nossas soluções</a>
+      <a class="btn btn-line" href="#contato">Falar com um especialista</a>
+    </div>
+
+    <!-- TROQUE pelos números reais da Pulsar -->
+    <div class="hero-stats rv">
+      <div class="stat"><b data-count="15" data-suffix="+">0</b><span>anos de experiência somados em Protheus</span></div>
+      <div class="stat"><b data-count="40" data-suffix="+">0</b><span>projetos entregues em produção</span></div>
+      <div class="stat"><b data-count="24" data-suffix="h">0</b><span>prazo máximo de retorno ao seu contato</span></div>
+    </div>
+  </div>
+
+  <span class="scroll-cue" aria-hidden="true">SCROLL<i></i></span>
+</section>
+
+<!-- ===== CLIENTES ===== -->
+<section class="clients" id="clientes">
+  <div class="shell"><p class="kicker">EMPRESAS QUE CONFIAM NA PULSAR</p></div>
+  <div class="marquee">
+    <div class="mq-track">
+      <img class="cli" src="assets/clientes/imdepa.png" alt="Imdepa" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/salton.png" alt="Salton" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/guerra.png" alt="Guerra Implementos" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/ciresult.png" alt="CI Result" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/alwa.png" alt="ALWA" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/wetrust.png" alt="Wetrust" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/antares.png" alt="Antares Acoplamentos" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/fasa.png" alt="FASA" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/3corp.png" alt="3Corp Technology" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/solucao.png" alt="Solução Condomínios" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/valclei.png" alt="Valclei Arrefecimento" width="200" height="60" loading="lazy" decoding="async">
+    </div>
+    <div class="mq-track" aria-hidden="true">
+      <img class="cli" src="assets/clientes/imdepa.png" alt="" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/salton.png" alt="" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/guerra.png" alt="" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/ciresult.png" alt="" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/alwa.png" alt="" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/wetrust.png" alt="" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/antares.png" alt="" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/fasa.png" alt="" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/3corp.png" alt="" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/solucao.png" alt="" width="200" height="60" loading="lazy" decoding="async">
+      <img class="cli" src="assets/clientes/valclei.png" alt="" width="200" height="60" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre">
+  <div class="shell about-in">
+    <div>
+      <span class="sec-num rv">01</span>
+      <h2 class="rv">Sobre a Pulsar</h2>
+      <p class="lede rv">A Pulsar nasceu da convicção de que <strong>software bom é software que a operação sente</strong>: menos retrabalho, menos planilha paralela, menos gente esperando o sistema.</p>
+      <p class="rv" style="margin-top:1.1rem;color:var(--mute)">Somos uma softhouse de Caxias do Sul formada por desenvolvedores com estrada em ERP Protheus e em desenvolvimento moderno. Atuamos dentro do ambiente que já existe na sua empresa, sem parar a operação, e entregamos código documentado que qualquer time consegue manter depois.</p>
+      <p class="rv" style="margin-top:1.1rem;color:var(--mute)">Você fala direto com quem escreve o código. Sem camada de intermediário e sem repassar o problema para outra equipe.</p>
+      <div class="badges rv">
+        <div class="badge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Especialistas em ADVPL e TLPP</div>
+        <div class="badge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Do ponto de entrada no Protheus ao app publicado</div>
+        <div class="badge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Escopo, prazo e valor fechados antes de começar</div>
+      </div>
+    </div>
+    <div class="about-media rv">
+      <div class="frame">
+        <picture>
+          <source srcset="assets/time/equipe-pulsar.webp" type="image/webp">
+          <img src="assets/time/equipe-pulsar.jpg" width="1200" height="1500" loading="lazy" decoding="async"
+               alt="Os três sócios da Pulsar no escritório em Caxias do Sul">
+        </picture>
+      </div>
+      <div class="about-tag"><b>Caxias do Sul</b><span>Serra Gaúcha · atendimento em todo o Brasil</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVIÇOS ===== -->
+<section id="servicos">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="sec-num rv">02</span>
+      <h2 class="rv">Nossos serviços</h2>
+      <p class="lede rv">Acompanhamos sua empresa em cada etapa: do ajuste pontual no ERP ao produto digital novo, publicado e rodando.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc rv">
+        <div class="svc-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg></div>
+        <h3>ERP Protheus</h3>
+        <p>Customizações, rotinas novas e correções no Protheus da TOTVS, feitas dentro do padrão para não quebrar na próxima atualização.</p>
+        <ul><li>Customização de rotinas</li><li>Pontos de entrada</li><li>Relatórios e painéis</li><li>Correção de bugs</li></ul>
+        <span class="more">Falar sobre Protheus <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20M6 21h12"/></svg></div>
+        <h3>Aplicações web</h3>
+        <p>Sistemas internos, portais e painéis sob medida. Rápidos no celular, seguros no servidor e fáceis de manter depois da entrega.</p>
+        <ul><li>Sistemas internos</li><li>Portais de cliente</li><li>Painéis de indicadores</li><li>APIs e back-end</li></ul>
+        <span class="more">Falar sobre web <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+        <h3>Apps mobile</h3>
+        <p>Aplicativos nativos e híbridos para iOS e Android, para equipe de campo, força de vendas ou cliente final.</p>
+        <ul><li>iOS e Android</li><li>Funcionamento offline</li><li>Integração com o ERP</li><li>Publicação nas lojas</li></ul>
+        <span class="more">Falar sobre mobile <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 013 3v6"/></svg></div>
+        <h3>Integrações</h3>
+        <p>Conectamos o Protheus a CRMs, e-commerces, bancos e sistemas de terceiros. Os dados param de andar em planilha.</p>
+        <ul><li>APIs REST e webhooks</li><li>EDI e arquivos</li><li>Middleware sob medida</li><li>Monitoramento de falhas</li></ul>
+        <span class="more">Falar sobre integrações <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Sustentação e suporte</h3>
+        <p>Contrato mensal de horas para quem precisa de alguém por perto: chamados, melhorias contínuas e plantão em virada de mês.</p>
+        <ul><li>Pacote de horas</li><li>Atendimento a chamados</li><li>Melhoria contínua</li><li>Histórico do seu ambiente</li></ul>
+        <span class="more">Falar sobre suporte <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+
+      <article class="svc rv">
+        <div class="svc-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.3.3.5.7.5 1.1h6c0-.4.2-.8.5-1.1A6 6 0 0012 3z"/></svg></div>
+        <h3>Consultoria técnica</h3>
+        <p>Avaliação do que você já tem antes de gastar com o que não precisa: arquitetura, performance e caminho de evolução.</p>
+        <ul><li>Diagnóstico do ambiente</li><li>Análise de performance</li><li>Plano de evolução</li><li>Segunda opinião técnica</li></ul>
+        <span class="more">Falar sobre consultoria <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== METODOLOGIA ===== -->
+<section class="method" id="metodo">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="eyebrow rv"><i></i>Como trabalhamos</span>
+      <h2 class="rv">Do primeiro contato ao sistema rodando</h2>
+      <p class="lede rv">Um caminho previsível, com entrega parcial a cada quinzena. Você acompanha o que está sendo feito em vez de esperar o resultado no fim.</p>
+    </div>
+    <div class="steps">
+      <article class="step rv"><b>01</b><h3>Diagnóstico</h3><p>Entendemos a operação, os gargalos e o ambiente antes de propor qualquer coisa. Pergunta demais é de propósito.</p></article>
+      <article class="step rv"><b>02</b><h3>Escopo e proposta</h3><p>Você recebe por escrito o que será feito, o prazo e o valor. Só começamos depois do seu aceite.</p></article>
+      <article class="step rv"><b>03</b><h3>Desenvolvimento</h3><p>Ciclos de duas semanas com entrega para você testar. Ajuste de rota no meio do caminho é normal e previsto.</p></article>
+      <article class="step rv"><b>04</b><h3>Go-live e suporte</h3><p>Virada acompanhada, treinamento da equipe e canal aberto depois. O projeto não termina na entrega.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASES ===== -->
+<section id="cases">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="sec-num rv">03</span>
+      <h2 class="rv">Projetos que estão em produção</h2>
+      <p class="lede rv">Não falamos de entrega em tese. Estes são sistemas rodando hoje, usados todos os dias por quem trabalha neles.</p>
+    </div>
+
+    <!-- TROQUE: substitua pelos seus dois melhores projetos, com print real e resultado medido -->
+    <article class="case rv">
+      <div class="case-txt">
+        <h3>Integração Protheus e portal de vendas</h3>
+        <p>Pedido lançado pelo representante no celular entra direto no Protheus, com estoque e política comercial validados na hora. Acabou a digitação em duplicidade no escritório.</p>
+        <p>Fluxo com fila e reprocessamento automático: se o ERP cai, nada se perde.</p>
+        <div class="case-tags"><span class="tag">ADVPL</span><span class="tag">API REST</span><span class="tag">Mobile</span><span class="tag">Fila de mensagens</span></div>
+      </div>
+      <div class="case-shot">
+        <p class="ph"><b>Print do sistema aqui</b>Uma captura real vale mais que qualquer texto. Proporção 16:10.</p>
+      </div>
+    </article>
+
+    <article class="case flip rv">
+      <div class="case-txt">
+        <h3>Painel de indicadores para a diretoria</h3>
+        <p>Os números que antes saíam em planilha no fim do mês passaram a estar na tela, atualizados, com filtro por filial e por período.</p>
+        <p>Construído sobre o dado que já existia no Protheus, sem duplicar base e sem sistema paralelo.</p>
+        <div class="case-tags"><span class="tag">Web</span><span class="tag">SQL</span><span class="tag">Protheus</span><span class="tag">Dashboards</span></div>
+      </div>
+      <div class="case-shot">
+        <p class="ph"><b>Print do painel aqui</b>Se o dado for sensível, borre os números antes de publicar.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== TIME ===== -->
+<section id="time">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="sec-num rv">04</span>
+      <h2 class="rv">Quem vai atender você</h2>
+      <p class="lede rv">Time pequeno e sênior. A pessoa que ouve o seu problema é a mesma que escreve a solução.</p>
+    </div>
+    <!-- Fotos: assets/time/socio-1|2|3. Se algum nome estiver na foto errada, basta trocar o numero do arquivo no card. -->
+    <div class="team">
+      <article class="person rv">
+        <div class="photo">
+            <picture>
+              <source srcset="assets/time/socio-1.webp" type="image/webp">
+              <img src="assets/time/socio-1.jpg" width="800" height="1000" loading="lazy" decoding="async" alt="Everson Almeida, sócio da Pulsar">
+            </picture>
+          </div>
+        <div class="person-body">
+          <h3>Everson Almeida</h3>
+          <p class="person-role">Sócio-fundador · Protheus e Arquitetura</p>
+          <p>Conduz os projetos do diagnóstico à entrega, com foco em ERP Protheus e integração entre sistemas.</p>
+          <div class="tags"><span class="tag">Protheus</span><span class="tag">ADVPL</span><span class="tag">Integrações</span></div>
+          <a class="mail" href="mailto:everson.dacostaalmeida@pulsar.dev.br">everson.dacostaalmeida@pulsar.dev.br</a>
+        </div>
+      </article>
+      <article class="person rv">
+        <div class="photo">
+            <picture>
+              <source srcset="assets/time/socio-2.webp" type="image/webp">
+              <img src="assets/time/socio-2.jpg" width="800" height="1000" loading="lazy" decoding="async" alt="Claudio Henrique, sócio da Pulsar">
+            </picture>
+          </div>
+        <div class="person-body">
+          <h3>Claudio Henrique</h3>
+          <p class="person-role">Sócio · Desenvolvimento</p>
+          <p>Responsável pelo desenvolvimento das aplicações web e mobile, do back-end à publicação nas lojas.</p>
+          <div class="tags"><span class="tag">Web</span><span class="tag">Mobile</span><span class="tag">APIs</span></div>
+          <a class="mail" href="mailto:claudio.henrique@pulsar.dev.br">claudio.henrique@pulsar.dev.br</a>
+        </div>
+      </article>
+      <article class="person rv">
+        <div class="photo">
+            <picture>
+              <source srcset="assets/time/socio-3.webp" type="image/webp">
+              <img src="assets/time/socio-3.jpg" width="800" height="1000" loading="lazy" decoding="async" alt="Daniel Matias, sócio da Pulsar">
+            </picture>
+          </div>
+        <div class="person-body">
+          <h3>Daniel Matias</h3>
+          <p class="person-role">Sócio · Protheus e Sustentação</p>
+          <p>Atua na customização do ERP e no suporte contínuo, mantendo o ambiente dos clientes estável no dia a dia.</p>
+          <div class="tags"><span class="tag">Protheus</span><span class="tag">Suporte</span><span class="tag">TLPP</span></div>
+          <a class="mail" href="mailto:daniel.matias@pulsar.dev.br">daniel.matias@pulsar.dev.br</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTO ===== -->
+<section class="quote">
+  <div class="shell quote-in rv">
+    <figure style="margin:0">
+      <span class="mark" aria-hidden="true">&ldquo;</span>
+      <blockquote>Coloque aqui um depoimento real de cliente. Peça duas ou três frases sobre o problema que existia antes e o que mudou depois da entrega. Nome, cargo e empresa fazem toda a diferença na credibilidade.</blockquote>
+      <figcaption><b>Nome do cliente</b>Cargo · Empresa</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="duvidas">
+  <div class="shell faq-in">
+    <div>
+      <span class="eyebrow rv"><i></i>Dúvidas frequentes</span>
+      <h2 class="rv">Antes de você perguntar</h2>
+      <p class="lede rv">Não achou o que precisava? Chame no WhatsApp que a gente responde direto.</p>
+    </div>
+    <div class="rv">
+      <details open><summary>Vocês atendem empresas fora de Caxias do Sul?</summary><div class="ans">Sim. Estamos em Caxias do Sul, na Serra Gaúcha, e atendemos todo o Brasil de forma remota. Visitas presenciais são combinadas quando o projeto pede.</div></details>
+      <details><summary>Com quais versões do Protheus vocês trabalham?</summary><div class="ans">Trabalhamos com o Protheus 12 e desenvolvemos tanto em ADVPL quanto em TLPP. Ambientes mais antigos são avaliados caso a caso antes de qualquer proposta.</div></details>
+      <details><summary>Como funciona o orçamento?</summary><div class="ans">A primeira conversa e o levantamento não têm custo. Depois disso você recebe uma proposta com escopo, prazo e valor fechados. Projetos maiores podem ser divididos em etapas com entregas independentes.</div></details>
+      <details><summary>Dá para integrar o Protheus com um sistema que já usamos?</summary><div class="ans">Na maioria dos casos, sim. Se o outro sistema expõe API, arquivo ou banco de dados, conseguimos montar a integração. Analisamos a documentação dele antes de confirmar prazo.</div></details>
+      <details><summary>Quanto tempo leva um projeto?</summary><div class="ans">Uma customização pontual costuma levar dias. Um sistema web ou app completo leva de dois a quatro meses, com entregas parciais a cada duas semanas para você acompanhar.</div></details>
+      <details><summary>O código fica comigo no final?</summary><div class="ans">Fica. Você recebe o repositório e a documentação. Nosso trabalho é ser escolhido pela qualidade, não por dependência técnica.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section class="contact" id="contato">
+  <div class="shell contact-in">
+    <div>
+      <span class="eyebrow rv"><i></i>Fale com a gente</span>
+      <h2 class="rv">Conte o que está travando na sua operação</h2>
+      <p class="lede rv">Preencha o formulário e a gente retorna com o caminho mais rápido para o seu caso: customização, projeto novo ou suporte.</p>
+      <ul class="perks rv">
+        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Retorno em até 24 horas úteis, sem compromisso</li>
+        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Levantamento inicial do seu cenário sem custo</li>
+        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Atendimento direto com os sócios da Pulsar</li>
+        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Se não for nosso perfil de projeto, dizemos na hora</li>
+      </ul>
+      <p class="contact-wa rv">Prefere falar agora? <a href="https://wa.me/5554994385182?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Pulsar." target="_blank" rel="noopener">Chame no WhatsApp (54) 99438-5182</a></p>
+    </div>
+
+    <form class="form rv" id="form" novalidate>
+      <div class="fgrid">
+        <div class="field">
+          <label for="nome">Nome completo <i>*</i></label>
+          <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar" required>
+          <span class="msg-err">Preencha seu nome.</span>
+        </div>
+        <div class="field">
+          <label for="empresa">Empresa <i>*</i></label>
+          <input id="empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nome da empresa" required>
+          <span class="msg-err">Preencha o nome da empresa.</span>
+        </div>
+        <div class="field">
+          <label for="email">E-mail <i>*</i></label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br" required>
+          <span class="msg-err">Informe um e-mail válido.</span>
+        </div>
+        <div class="field">
+          <label for="fone">WhatsApp <i>*</i></label>
+          <input id="fone" name="fone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(54) 90000-0000" required>
+          <span class="msg-err">Informe um telefone com DDD.</span>
+        </div>
+        <div class="field">
+          <label for="servico">Assunto <i>*</i></label>
+          <select id="servico" name="servico" required>
+            <option value="">Selecione</option>
+            <option>ERP Protheus — customização</option>
+            <option>ERP Protheus — suporte e sustentação</option>
+            <option>Aplicação web</option>
+            <option>Aplicativo mobile</option>
+            <option>Integração entre sistemas</option>
+            <option>Consultoria técnica</option>
+            <option>Ainda não sei</option>
+          </select>
+          <span class="msg-err">Escolha um assunto.</span>
+        </div>
+        <div class="field">
+          <label for="prazo">Urgência</label>
+          <select id="prazo" name="prazo">
+            <option value="">Selecione</option>
+            <option>É urgente, está parando a operação</option>
+            <option>Nas próximas semanas</option>
+            <option>Estou planejando para os próximos meses</option>
+            <option>Só levantando informação</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="msg">Conte o que precisa <i>*</i></label>
+          <textarea id="msg" name="msg" placeholder="Qual sistema, o que está acontecendo hoje e o que você gostaria que acontecesse." required></textarea>
+          <span class="msg-err">Escreva um pouco sobre o que você precisa.</span>
+        </div>
+        <div class="field full">
+          <label for="origem">Como nos conheceu?</label>
+          <select id="origem" name="origem">
+            <option value="">Selecione</option>
+            <option>Indicação</option>
+            <option>Google</option>
+            <option>LinkedIn</option>
+            <option>Instagram</option>
+            <option>Já somos clientes</option>
+            <option>Outro</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn-solid" type="submit">Enviar mensagem</button>
+      <p class="form-note">Seus dados são usados apenas para entrarmos em contato.</p>
+
+      <div class="form-ok" id="formOk" role="status">
+        <div class="ok-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Recebemos seu contato</h3>
+        <p>Em breve alguém do time da Pulsar fala com você.</p>
+        <p style="margin-top:1rem"><a href="https://wa.me/5554994385182" target="_blank" rel="noopener" style="color:var(--beam);font-variation-settings:'wght' 650">Prefere adiantar? Chame no WhatsApp</a></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#home" style="margin:0">
+          <svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="27" fill="none" stroke="#22c3dc" stroke-width="9"/>
+            <circle cx="50" cy="50" r="12" fill="#22c3dc"/>
+            <path d="M2 38h22M78 62h20" stroke="#22c3dc" stroke-width="9" stroke-linecap="round"/>
+          </svg>
+          <span class="logo-name">PULSAR</span>
+        </a>
+        <p>Desenvolvimento de software e ERP Protheus, feito na Serra Gaúcha para todo o Brasil.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn da Pulsar"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21h-4z"/></svg></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram da Pulsar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://wa.me/5554994385182" target="_blank" rel="noopener" aria-label="WhatsApp da Pulsar"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.5-.6-2.7-1.2-4.4-3.9-4.5-4.1-.1-.2-1.1-1.4-1.1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#metodo">Metodologia</a></li>
+          <li><a href="#cases">Projetos</a></li>
+          <li><a href="#time">Time</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">ERP Protheus</a></li>
+          <li><a href="#servicos">Aplicações web</a></li>
+          <li><a href="#servicos">Apps mobile</a></li>
+          <li><a href="#servicos">Integrações</a></li>
+          <li><a href="#servicos">Sustentação</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5554994385182" target="_blank" rel="noopener">(54) 99438-5182</a></li>
+          <li><a href="mailto:everson.dacostaalmeida@pulsar.dev.br">everson.dacostaalmeida@pulsar.dev.br</a></li>
+          <li><a href="mailto:claudio.henrique@pulsar.dev.br">claudio.henrique@pulsar.dev.br</a></li>
+          <li><a href="mailto:daniel.matias@pulsar.dev.br">daniel.matias@pulsar.dev.br</a></li>
+          <li>Caxias do Sul — RS</li>
+          <li>Seg a Sex, 8h30 às 18h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-end">
+      <span>© <span id="ano">2026</span> Pulsar Desenvolvimento de Software. Todos os direitos reservados.</span>
+      <span>Caxias do Sul, Rio Grande do Sul, Brasil</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5554994385182?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Pulsar." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#04331a" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.5-.6-2.7-1.2-4.4-3.9-4.5-4.1-.1-.2-1.1-1.4-1.1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "@id":"https://pulsar.dev.br/#organizacao",
+  "name":"Pulsar Desenvolvimento de Software",
+  "description":"Softhouse especializada em ERP Protheus, desenvolvimento web, aplicativos mobile e integração de sistemas.",
+  "url":"https://pulsar.dev.br/",
+  "telephone":"+55-54-99438-5182",
+  "email":"everson.dacostaalmeida@pulsar.dev.br",
+  "address":{"@type":"PostalAddress","addressLocality":"Caxias do Sul","addressRegion":"RS","addressCountry":"BR"},
+  "areaServed":{"@type":"Country","name":"Brasil"},
+  "knowsAbout":["ERP Protheus","ADVPL","TLPP","TOTVS","Desenvolvimento web","Aplicativos mobile","Integração de sistemas"],
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"18:00"}],
+  "makesOffer":[
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Customização e suporte de ERP Protheus"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Desenvolvimento de aplicações web"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Desenvolvimento de aplicativos mobile"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Integração de sistemas"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sustentação e suporte técnico"}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Vocês atendem empresas fora de Caxias do Sul?","acceptedAnswer":{"@type":"Answer","text":"Sim. Estamos em Caxias do Sul e atendemos todo o Brasil de forma remota, com visitas presenciais quando o projeto pede."}},
+    {"@type":"Question","name":"Com quais versões do Protheus vocês trabalham?","acceptedAnswer":{"@type":"Answer","text":"Trabalhamos com o Protheus 12 e desenvolvemos em ADVPL e TLPP. Ambientes mais antigos são avaliados caso a caso."}},
+    {"@type":"Question","name":"Como funciona o orçamento?","acceptedAnswer":{"@type":"Answer","text":"A primeira conversa e o levantamento não têm custo. Depois disso você recebe uma proposta com escopo, prazo e valor fechados."}},
+    {"@type":"Question","name":"Dá para integrar o Protheus com um sistema que já usamos?","acceptedAnswer":{"@type":"Answer","text":"Na maioria dos casos sim. Se o outro sistema expõe API, arquivo ou banco de dados, conseguimos montar a integração."}},
+    {"@type":"Question","name":"Quanto tempo leva um projeto?","acceptedAnswer":{"@type":"Answer","text":"Customizações pontuais levam dias. Um sistema web ou app completo leva de dois a quatro meses, com entregas parciais quinzenais."}},
+    {"@type":"Question","name":"O código fica comigo no final?","acceptedAnswer":{"@type":"Answer","text":"Sim. Você recebe o repositório e a documentação do projeto."}}
+  ]
+}
+</script>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ============================================================
+     CONFIGURAÇÃO
+     WHATS: número que recebe os contatos (código do país + DDD).
+     ENDPOINT: se você tiver um back-end ou usar Formspree/Web3Forms,
+     cole a URL aqui. Enquanto estiver vazio, o formulário abre o
+     WhatsApp já com a mensagem montada — funciona sem servidor.
+     ============================================================ */
+  var WHATS = '5554994385182';
+  var ENDPOINT = '';
+
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var d = document;
+  d.getElementById('ano').textContent = new Date().getFullYear();
+
+  /* ---------- menu ---------- */
+  var burger = d.getElementById('burger'), nav = d.getElementById('nav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    d.body.style.overflow = open && innerWidth <= 760 ? 'hidden' : '';
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.closest('a')){
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+      d.body.style.overflow = '';
+    }
+  });
+
+  /* ---------- submenu ---------- */
+  d.querySelectorAll('.drop').forEach(function(drop){
+    var btn = drop.querySelector('.drop-btn');
+    var set = function(v){ drop.dataset.open = v; btn.setAttribute('aria-expanded', v); };
+    btn.addEventListener('click', function(e){ e.stopPropagation(); set(drop.dataset.open !== 'true'); });
+    drop.addEventListener('mouseenter', function(){ if(innerWidth > 760) set(true); });
+    drop.addEventListener('mouseleave', function(){ if(innerWidth > 760) set(false); });
+    d.addEventListener('click', function(){ if(innerWidth > 760) set(false); });
+    drop.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ set(false); btn.focus(); } });
+  });
+
+  /* ---------- header ---------- */
+  var head = d.getElementById('head');
+  var links = [].slice.call(d.querySelectorAll('.nav a[href^="#"]'));
+  function onScroll(){
+    head.classList.toggle('stuck', scrollY > 20);
+    var y = scrollY + 140, cur = null;
+    d.querySelectorAll('main section[id]').forEach(function(s){
+      if(s.offsetTop <= y) cur = s.id;
+    });
+    links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+  }
+  onScroll(); addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---------- reveal + contadores ---------- */
+  var io = new IntersectionObserver(function(list){
+    list.forEach(function(en){
+      if(!en.isIntersecting) return;
+      en.target.classList.add('in');
+      en.target.querySelectorAll('[data-count]').forEach(function(el){
+        var end = +el.dataset.count, suf = el.dataset.suffix || '', t0 = null;
+        if(reduce){ el.textContent = end + suf; return; }
+        requestAnimationFrame(function tick(ts){
+          if(!t0) t0 = ts;
+          var p = Math.min((ts - t0)/1400, 1);
+          el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suf;
+          if(p < 1) requestAnimationFrame(tick);
+        });
+      });
+      io.unobserve(en.target);
+    });
+  }, {threshold:.15, rootMargin:'0px 0px -6% 0px'});
+  d.querySelectorAll('.rv').forEach(function(el, i){
+    el.style.transitionDelay = (Math.min(i % 4, 3) * 80) + 'ms';
+    io.observe(el);
+  });
+
+  /* ---------- traço de pulsar ---------- */
+  var cv = d.getElementById('trace');
+  if(cv && !reduce){
+    var ctx = cv.getContext('2d'), w=0, h=0, dpr = Math.min(devicePixelRatio || 1, 2), t = 0, raf;
+    function size(){
+      var r = cv.getBoundingClientRect();
+      w = r.width; h = r.height;
+      cv.width = w * dpr; cv.height = h * dpr;
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    function pulse(x){
+      var p = 280, dd = ((x % p) + p) % p, s = 0;
+      s += Math.exp(-Math.pow((dd-40)/9, 2));
+      s += .45 * Math.exp(-Math.pow((dd-72)/15, 2));
+      s += .18 * Math.exp(-Math.pow((dd-112)/24, 2));
+      return s;
+    }
+    function draw(){
+      ctx.clearRect(0,0,w,h);
+      var base = h * .78, amp = Math.min(h * .5, 130), sp = t * .5;
+      for(var k=0;k<3;k++){
+        var alpha = k === 0 ? .5 : (k === 1 ? .14 : .07);
+        ctx.beginPath();
+        for(var x=0;x<=w;x+=2){
+          var y = base - amp * pulse(x + sp - k*190) - k*26 + Math.sin((x + sp) * .011) * 3;
+          x === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+        }
+        ctx.strokeStyle = 'rgba(34,195,220,' + alpha + ')';
+        ctx.lineWidth = k === 0 ? 1.7 : 1;
+        ctx.shadowBlur = k === 0 ? 16 : 0;
+        ctx.shadowColor = 'rgba(34,195,220,.6)';
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+      }
+      t++;
+      raf = requestAnimationFrame(draw);
+    }
+    size(); draw();
+    addEventListener('resize', function(){ cancelAnimationFrame(raf); size(); draw(); });
+    d.addEventListener('visibilitychange', function(){
+      cancelAnimationFrame(raf);
+      if(!d.hidden) draw();
+    });
+  }
+
+  /* ---------- máscara de telefone ---------- */
+  var fone = d.getElementById('fone');
+  fone.addEventListener('input', function(){
+    var v = fone.value.replace(/\D/g, '').slice(0, 11);
+    if(v.length > 6) v = '(' + v.slice(0,2) + ') ' + v.slice(2, v.length > 10 ? 7 : 6) + '-' + v.slice(v.length > 10 ? 7 : 6);
+    else if(v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+    else if(v.length) v = '(' + v;
+    fone.value = v;
+  });
+
+  /* ---------- formulário ---------- */
+  var form = d.getElementById('form'), ok = d.getElementById('formOk');
+
+  function valid(el){
+    var v = el.value.trim();
+    if(!v) return false;
+    if(el.type === 'email') return /^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(v);
+    if(el.id === 'fone') return v.replace(/\D/g,'').length >= 10;
+    return true;
+  }
+  form.querySelectorAll('[required]').forEach(function(el){
+    el.addEventListener('blur', function(){ el.closest('.field').classList.toggle('err', !valid(el)); });
+    el.addEventListener('input', function(){ if(valid(el)) el.closest('.field').classList.remove('err'); });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var bad = null;
+    form.querySelectorAll('[required]').forEach(function(el){
+      var good = valid(el);
+      el.closest('.field').classList.toggle('err', !good);
+      if(!good && !bad) bad = el;
+    });
+    if(bad){ bad.focus(); return; }
+
+    var get = function(id){ return d.getElementById(id).value.trim(); };
+    var dados = {
+      nome: get('nome'), empresa: get('empresa'), email: get('email'),
+      fone: get('fone'), servico: get('servico'), prazo: get('prazo'),
+      msg: get('msg'), origem: get('origem')
+    };
+
+    function sucesso(){
+      form.classList.add('sent');
+      ok.classList.add('on');
+      ok.scrollIntoView({block:'center', behavior: reduce ? 'auto' : 'smooth'});
+    }
+
+    if(ENDPOINT){
+      fetch(ENDPOINT, {
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify(dados)
+      }).then(sucesso).catch(function(){
+        alert('Não conseguimos enviar agora. Chame no WhatsApp (54) 99438-5182.');
+      });
+      return;
+    }
+
+    var texto =
+      'Contato pelo site da Pulsar\n\n' +
+      'Nome: ' + dados.nome + '\n' +
+      'Empresa: ' + dados.empresa + '\n' +
+      'E-mail: ' + dados.email + '\n' +
+      'WhatsApp: ' + dados.fone + '\n' +
+      'Assunto: ' + dados.servico + '\n' +
+      (dados.prazo ? 'Urgência: ' + dados.prazo + '\n' : '') +
+      (dados.origem ? 'Como conheceu: ' + dados.origem + '\n' : '') +
+      '\n' + dados.msg;
+    window.open('https://wa.me/' + WHATS + '?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+    sucesso();
+  });
+})();
+</script>
+
+</body>
+</html>
